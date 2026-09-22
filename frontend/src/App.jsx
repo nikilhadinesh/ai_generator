@@ -9,6 +9,13 @@ import TextToVideo from './pages/TextToVideo';
 import ImageToVideo from './pages/ImageToVideo';
 import TextToImage from './pages/TextToImage';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+// Example axios call:
+axios.get(`${API_BASE_URL}/api/users`)
+  .then(res => console.log(res.data));
+
+
 function App() {
   return (
     <AuthProvider>
