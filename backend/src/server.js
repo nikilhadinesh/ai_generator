@@ -55,3 +55,10 @@ app.use('/images', express.static(path.join(__dirname, '../generated_images')));
 
 const authRoute = require('./routes/auth.route');
 app.use('/api/auth', authRoute);
+// Serverless-ku Express app export panni irukkanum:
+module.exports = app; 
+
+// app.listen() irundha adhu local-ku mattum dhaan work aagum:
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(5000, () => console.log('Server running on port 5000'));
+}
